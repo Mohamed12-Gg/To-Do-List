@@ -13,25 +13,19 @@ Users can add, edit, delete, and mark tasks as completed, with data saved locall
 - Responsive design for mobile and desktop
 
 ## Technologies Used
-- **HTML5**: Page structure and layout :contentReference[oaicite:0]{index=0}
-- **CSS3**: Styling, layout, and responsiveness :contentReference[oaicite:1]{index=1}
-- **JavaScript (Vanilla)**: App logic, DOM manipulation, and localStorage handling :contentReference[oaicite:2]{index=2}
+- **HTML5**: Page structure and layout
+- **CSS3**: Styling, layout, and responsiveness
+- **JavaScript (Vanilla)**: App logic, DOM manipulation, and localStorage handling
 - **Bootstrap (JS bundle)**: Basic responsiveness support
 
 ## How It Works
 1. User enters a task and clicks **Add**.
 2. The task is displayed in a table with Done, Edit, and Delete options.
-3. All tasks are saved automatically in the browser’s localStorage.
+3. All tasks are saved automatically in the browser's localStorage.
 4. On page reload, tasks are restored automatically.
 
 ## Usage
 Just open `index.html` in any modern web browser — no installation required.
 
-## Live Demo
-<a href="https://to-do-list-seven-ecru-13.vercel.app/" target="_blank">
-  To-Do List Web App
-</a>
-
-
-
-
+## Demo
+Check out the live demo: [To-Do List Web App](https://to-do-list-seven-ecru-13.vercel.app/)
