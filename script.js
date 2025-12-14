@@ -1,6 +1,6 @@
-// ========== Load tasks from localStorage on page load ==========
+// Initialize tasks array
 let tasks = [];
-
+// Load tasks from localStorage on page load
 window.onload = function() {
     if (localStorage.getItem('tasks') !== null) {
         tasks = JSON.parse(localStorage.getItem('tasks'));
@@ -10,11 +10,19 @@ window.onload = function() {
     }
 };
 
-// ========== Save tasks to localStorage ==========
+
+// Save tasks to localStorage
+function saveToLocalStorage() {
+    const taskList = document.getElementById('taskList');
+    const rows = taskList.getElementsByTagName('tr');
+    tasks = [];  // clear array from old data
+}
+// Save tasks to localStorage
 function saveToLocalStorage() {
     const taskList = document.getElementById('taskList');
     const rows = taskList.getElementsByTagName('tr');
     tasks = [];
+
     
     for (let i = 0; i < rows.length; i++) {
         const checkbox = rows[i].querySelector('.done');
@@ -30,7 +38,7 @@ function saveToLocalStorage() {
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
-// ========== Add button event ==========
+// Add task button event
 document.getElementById('addBtn').addEventListener('click', function() {
     const taskInput = document.getElementById('taskInput');
     const taskText = taskInput.value.trim(); 
@@ -45,7 +53,7 @@ document.getElementById('addBtn').addEventListener('click', function() {
     taskInput.value = '';
 });
 
-// ========== Add task to DOM ==========
+// Function to add task to DOM
 function addTaskToDOM(text, isDone) {
     const taskList = document.getElementById('taskList');
     const newRow = document.createElement('tr'); 
@@ -80,7 +88,7 @@ function addTaskToDOM(text, isDone) {
     });
 }
 
-// ========== Delete and Edit events ==========
+// Delete and Edit button events using event delegation
 document.getElementById('taskList').addEventListener('click', function(event) {
     if (event.target.classList.contains('deleteBtn')) {
         const row = event.target.parentNode.parentNode; 
